@@ -1,41 +1,60 @@
-Proyecto: Análisis de Contraseñas Inseguras en Go
-Este proyecto tiene como objetivo analizar un archivo con contraseñas y compararlas con una lista de contraseñas comunes para identificar cuáles son inseguras. Está diseñado como una introducción práctica al manejo de archivos, mapas y estructuras comunes en el lenguaje Go.
+# **Proyecto: Análisis de Contraseñas Inseguras en Go**
 
-Descripción del Proyecto
+Este proyecto tiene como objetivo analizar un archivo con contraseñas y compararlas con una lista de contraseñas comunes para identificar cuáles son inseguras. Está diseñado como una introducción práctica al manejo de archivos, mapas y estructuras comunes en el lenguaje **Go**.
+
+---
+
+## **Descripción del Proyecto**
+
 El programa:
 
-Lee un archivo con contraseñas comunes (top_password.txt) y lo almacena en un mapa para búsquedas rápidas.
-Lee un archivo con contraseñas a analizar (password.txt).
-Compara cada contraseña del archivo con las contraseñas comunes para determinar si es insegura.
-Imprime en consola las contraseñas inseguras detectadas.
-Este proyecto es útil para:
+- Lee un archivo con contraseñas comunes (`top_password.txt`) y lo almacena en un mapa para búsquedas rápidas.
+- Lee un archivo con contraseñas a analizar (`password.txt`).
+- Compara cada contraseña del archivo con las contraseñas comunes para determinar si es insegura.
+- Imprime en consola las contraseñas inseguras detectadas.
 
-Ciberseguridad: Detectar contraseñas débiles o comprometidas.
-Educación: Aprender manejo de archivos, mapas y procesamiento de datos en Go.
-Requisitos
-Go instalado: Asegúrate de tener una versión reciente instalada. Descárgala desde golang.org.
-Archivos necesarios:
-password.txt: Archivo con las contraseñas a analizar.
-top_password.txt: Archivo con contraseñas comunes.
-Archivos Necesarios
-Archivo de contraseñas a analizar (password.txt)
+### **Este proyecto es útil para:**
+- **Ciberseguridad**: Detectar contraseñas débiles o comprometidas.
+- **Educación**: Aprender manejo de archivos, mapas y procesamiento de datos en Go.
+
+---
+
+## **Requisitos**
+
+- **Go instalado**:  
+  Asegúrate de tener una versión reciente instalada. Descárgala desde [golang.org](https://golang.org/).
+  
+- **Archivos necesarios**:  
+  - `password.txt`: Archivo con las contraseñas a analizar.  
+  - `top_password.txt`: Archivo con contraseñas comunes.
+
+---
+
+## **Archivos Necesarios**
+
+### **Archivo de contraseñas a analizar (`password.txt`)**
 Ejemplo de contenido:
 
-Copiar código
+
+```bash
 password123
 123456
 mypassword
 qwerty
 supersecure
-Archivo de contraseñas comunes (top_password.txt)
+```
+
+### **Archivo de contraseñas comunes (top_password.txt)**
 Ejemplo de contenido:
 
-Copiar código
+```bash
 123456
 password
 qwerty
 abc123
 admin
+```
+
 Pasos para Ejecutar
 1. Clonar el repositorio
 Clona este proyecto en tu máquina local:
