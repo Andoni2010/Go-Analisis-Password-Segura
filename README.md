@@ -54,7 +54,7 @@ qwerty
 abc123
 admin
 ```
-
+---
 # Pasos para Ejecutar
 ### 1. Clonar el repositorio
 Clona este proyecto en tu máquina local:
@@ -69,26 +69,26 @@ Asegúrate de que los archivos password.txt y top_password.txt estén en el mism
 ###  3. Ejecutar el programa
 Compila y ejecuta el programa:
 
-bash
-Copiar código
+```bash
 go run main.go
+```
 ###  4. Revisar los resultados
 El programa imprimirá las contraseñas inseguras en la consola. Ejemplo de salida:
 
-csharp
-Copiar código
+```bash
 Contraseñas inseguras encontradas:
 123456
 qwerty
+```
+---
 ## **Desglose del Código**
 ###  1. main
 Esta función principal orquesta todo el programa:
 
-Declara los nombres de los archivos (password.txt y top_password.txt).
-Llama a loadCommonPassword para cargar las contraseñas comunes en un mapa.
-Llama a analyzePasswords para comparar las contraseñas del archivo de entrada con las contraseñas comunes.
-go
-Copiar código
+- Declara los nombres de los archivos (password.txt y top_password.txt).
+- Llama a loadCommonPassword para cargar las contraseñas comunes en un mapa.
+- Llama a analyzePasswords para comparar las contraseñas del archivo de entrada con las contraseñas comunes.
+```go
 func main() {
 	passwordFile := "password.txt"
 	commonPasswordFile := "top_password.txt"
@@ -96,15 +96,15 @@ func main() {
 	commonPassword := loadCommonPassword(commonPasswordFile)
 	analyzePasswords(passwordFile, commonPassword)
 }
+```
 ###  2. loadCommonPassword
 Propósito: Leer un archivo con contraseñas comunes y almacenarlas en un mapa (map[string]bool) para búsquedas rápidas.
 Cómo funciona:
-Abre el archivo con os.Open.
-Usa bufio.Scanner para leer línea por línea.
-Limpia cada línea con strings.TrimSpace.
-Almacena cada contraseña en un mapa donde la clave es la contraseña y el valor es true.
-go
-Copiar código
+- Abre el archivo con os.Open.
+- Usa bufio.Scanner para leer línea por línea.
+- Limpia cada línea con strings.TrimSpace.
+- Almacena cada contraseña en un mapa donde la clave es la contraseña y el valor es true.
+```go
 func loadCommonPassword(filePath string) map[string]bool {
 	file, err := os.Open(filePath)
 	if err != nil {
@@ -125,15 +125,15 @@ func loadCommonPassword(filePath string) map[string]bool {
 
 	return commonPassword
 }
+```
 ###  3. analyzePasswords
 Propósito: Comparar las contraseñas del archivo de entrada con el mapa de contraseñas comunes.
 Cómo funciona:
-Abre el archivo con os.Open.
-Usa bufio.Scanner para leer línea por línea.
-Verifica si cada contraseña está en el mapa usando la función IsInsecurePassword.
-Almacena las contraseñas inseguras en un slice ([]string) y las imprime en consola.
-go
-Copiar código
+- Abre el archivo con os.Open.
+- Usa bufio.Scanner para leer línea por línea.
+- Verifica si cada contraseña está en el mapa usando la función IsInsecurePassword.
+- Almacena las contraseñas inseguras en un slice ([]string) y las imprime en consola.
+```go
 func analyzePasswords(filePath string, commonPassword map[string]bool) {
 	file, err := os.Open(filePath)
 	if err != nil {
@@ -161,16 +161,18 @@ func analyzePasswords(filePath string, commonPassword map[string]bool) {
 		fmt.Println(p)
 	}
 }
+```
 ###  4. IsInsecurePassword
 Propósito: Verificar si una contraseña está en el mapa de contraseñas comunes.
 Cómo funciona:
-Toma una contraseña y verifica si está presente en el mapa.
-Retorna true si la contraseña es insegura, de lo contrario, retorna false.
-go
-Copiar código
+- Toma una contraseña y verifica si está presente en el mapa.
+- Retorna true si la contraseña es insegura, de lo contrario, retorna false.
+```go
 func IsInsecurePassword(password string, commonPassword map[string]bool) bool {
 	return commonPassword[password]
 }
+```
+---
 ## **Posibles Extensiones**
 - Leer los nombres de los archivos (password.txt y top_password.txt) desde argumentos de línea de comandos.
 - Exportar las contraseñas inseguras a un archivo CSV o JSON.
