@@ -176,4 +176,4 @@ func IsInsecurePassword(password string, commonPassword map[string]bool) bool {
 ## **Posibles Extensiones**
 - Leer los nombres de los archivos (password.txt y top_password.txt) desde argumentos de línea de comandos.
 - Exportar las contraseñas inseguras a un archivo CSV o JSON.
-- Permitir analizar archivos con miles de contraseñas utilizando goroutines para procesamiento concurrente.
+- Permitir analizar archivos con miles de contraseñas.
