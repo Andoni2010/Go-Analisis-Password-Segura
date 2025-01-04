@@ -56,23 +56,23 @@ admin
 ```
 
 # Pasos para Ejecutar
-## 1. Clonar el repositorio
+### 1. Clonar el repositorio
 Clona este proyecto en tu máquina local:
 
 ```bash
 git clone https://github.com/usuario/proyecto-go-password-analyzer.git
 ```
 
-## 2. Colocar los archivos necesarios
+###  2. Colocar los archivos necesarios
 Asegúrate de que los archivos password.txt y top_password.txt estén en el mismo directorio que el archivo de código.
 
-## 3. Ejecutar el programa
+###  3. Ejecutar el programa
 Compila y ejecuta el programa:
 
 bash
 Copiar código
 go run main.go
-## 4. Revisar los resultados
+###  4. Revisar los resultados
 El programa imprimirá las contraseñas inseguras en la consola. Ejemplo de salida:
 
 csharp
@@ -80,8 +80,8 @@ Copiar código
 Contraseñas inseguras encontradas:
 123456
 qwerty
-### **Desglose del Código**
-## 1. main
+## **Desglose del Código**
+###  1. main
 Esta función principal orquesta todo el programa:
 
 Declara los nombres de los archivos (password.txt y top_password.txt).
@@ -96,7 +96,7 @@ func main() {
 	commonPassword := loadCommonPassword(commonPasswordFile)
 	analyzePasswords(passwordFile, commonPassword)
 }
-## 2. loadCommonPassword
+###  2. loadCommonPassword
 Propósito: Leer un archivo con contraseñas comunes y almacenarlas en un mapa (map[string]bool) para búsquedas rápidas.
 Cómo funciona:
 Abre el archivo con os.Open.
@@ -125,7 +125,7 @@ func loadCommonPassword(filePath string) map[string]bool {
 
 	return commonPassword
 }
-## 3. analyzePasswords
+###  3. analyzePasswords
 Propósito: Comparar las contraseñas del archivo de entrada con el mapa de contraseñas comunes.
 Cómo funciona:
 Abre el archivo con os.Open.
@@ -161,7 +161,7 @@ func analyzePasswords(filePath string, commonPassword map[string]bool) {
 		fmt.Println(p)
 	}
 }
-## 4. IsInsecurePassword
+###  4. IsInsecurePassword
 Propósito: Verificar si una contraseña está en el mapa de contraseñas comunes.
 Cómo funciona:
 Toma una contraseña y verifica si está presente en el mapa.
